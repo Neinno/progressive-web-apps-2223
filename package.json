@@ -1,0 +1,32 @@
+{
+  "name": "pwarijksmuseum",
+  "version": "1.0.0",
+  "description": "A PWA created during the minor web development.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neinno/progressive-web-apps-2223.git"
+  },
+  "keywords": [
+    "PWA"
+  ],
+  "author": "Neinno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neinno/progressive-web-apps-2223/issues"
+  },
+  "homepage": "https://github.com/Neinno/progressive-web-apps-2223#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}

@@ -1,0 +1,208 @@
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color:#40474F;
+    --secondary-color: #D55140;
+    --header-text: #ffffff;
+    --main-text:black;
+}
+
+body {
+    font-family: sans-serif;
+    color:var(--main-text);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text);
+}
+
+header {
+    color: var(--header-text);
+    height: 50vh;
+    width: 100%;
+    background-color: var(--main-color);
+    background-image: url("assets/images/headerimage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header h1 {
+    padding: 1em 1em;
+    text-transform: uppercase;
+}
+
+header h1, main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+main form {
+    margin: 1em;
+}
+
+main form input[type=text]{
+    width: 100%;
+    padding: 1em;
+    border-radius: .5em;
+    border-style: hidden;
+    background-color: lightgray;
+}
+
+h2 {
+    margin: 0 1em;
+}
+
+main section {
+    margin: 1em;
+}
+
+main section h2 {
+    color: var(--main-text);
+    font-size: 1em;
+    margin: 1em 0;
+}
+
+main section:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+#error {
+    grid-column: 1/-1;
+    margin: auto;
+    text-align: center;
+    width: 15rem;
+}
+
+#error button {
+    margin: 1em;
+}
+
+#error button,
+#detail-page button {
+    border: none;
+    padding: 1em 2em;
+    background-color: var(--secondary-color);
+    color: white;
+    transition: .5s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+#error button:hover,
+#detail-page button:hover  {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+#loading {
+    width: 5em;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    border: .5em solid var(--secondary-color);
+    grid-column: 1/-1;
+    margin: auto;
+    position: relative;
+    animation: linear 1s loadingRotate infinite;
+}
+
+#loading:after {
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    top: 50%;
+    left:-.5em;
+    transform: rotate(45deg) translateX(-50%);
+}
+
+@keyframes loadingRotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}
+
+
+main section:nth-of-type(1) figure {
+    border-radius: 2em;
+    position: relative;
+    cursor: pointer;
+}
+
+main section:nth-of-type(1) figure:hover img {
+    border-radius: .5em;    
+    box-shadow: .2em .2em .2em var(--main-color);
+}
+
+main section:nth-of-type(1) figure img {
+    width: 100%;
+    border-radius: 2em;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: .5s;
+    box-shadow: 5px;
+}
+
+main section:nth-of-type(1) figure figcaption {
+    position: absolute;
+    bottom: 2em;
+    padding: 1em;
+    text-align: center;
+    background-color: rgba(255,255,255,.5);
+    width: 100%;
+}
+
+body section {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+
+/* detail page */
+#detail-page {
+    height: 100dvh;
+    top:0;
+    display: none;
+    width: 100%;
+    background-color: white;
+    padding: 1em;
+    max-width: 25em;
+    position: absolute;
+    transform: translatex(-50%);
+    left: 50%;
+}
+
+#detail-page h1,
+#detail-page p {
+    background-color: var(--main-color);
+    color: white;
+    padding: 1em;
+    width: inherit;
+}
+
+#detail-page p {
+    margin: 1em 0;
+}
+
+.detail-slide {
+    display: block !important;
+}
+
+#detail-page img {
+    width: 100%;
+    object-fit: cover; 
+    max-width: 25em;
+}
