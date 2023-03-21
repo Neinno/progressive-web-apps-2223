@@ -9,10 +9,14 @@
             Discover
         </h2>  
         <section id="art">
-            <div id="error">
-                <p>Er was een probleem met het ophalen van de data. Probeer het opnieuw.</p>
-                <button onClick="history.go(0);">Reload</button>
-            </div>
+             {{#each data}}
+                <a href="{{this.objectNumber}}">
+                    <figure>
+                        <figcaption>{{this.title}}</figcaption>
+                        <img src="{{this.webImage.url}}">
+                    </figure>
+                </a>
+             {{/each}}
         </section>
 
     </main>
