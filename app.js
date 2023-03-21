@@ -16,3 +16,6 @@ app.set('views', './views');
 
 const artRouter = require('./routes/art');
 app.use('/', artRouter);
+
+const detailRouter = require('./routes/artdetail');
+app.use('/artwork', detailRouter);

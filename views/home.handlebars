@@ -10,7 +10,7 @@
         </h2>  
         <section id="art">
              {{#each data}}
-                <a href="{{this.objectNumber}}">
+                <a href="artwork/{{this.objectNumber}}">
                     <figure>
                         <figcaption>{{this.title}}</figcaption>
                         <img src="{{this.webImage.url}}">
@@ -19,12 +19,7 @@
              {{/each}}
         </section>
 
-    </main>
-    
-    <section id="detail-page">
-
-    </section>
-    
+    </main>  
     
     <footer>
         <nav>
