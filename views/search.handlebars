@@ -1,0 +1,19 @@
+{{>header}}
+
+<main>
+    <form action="/search" method="POST">
+        <input type="text" name="searchInput" placeholder="Search..." value="{{searchInput}}">
+        <button type="submit">Search</button>
+    </form>
+
+    <section id="art">
+        {{#each data}}
+            <a href="artwork/{{this.objectNumber}}">
+                <figure>
+                    <figcaption>{{this.title}}</figcaption>
+                    <img src="{{this.webImage.url}}">
+                </figure>
+            </a>
+        {{/each}}
+    </section>
+</main>

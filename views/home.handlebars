@@ -1,9 +1,11 @@
 {{>header}}
 
 <main>
-        <form>
-            <input type="text" name="searchbar" placeholder="Zoeken...">
-        </form>
+    <form action="/search" method="POST">
+        <input type="text" name="searchInput" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+
     
         <h2>
             Discover

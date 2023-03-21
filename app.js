@@ -8,6 +8,8 @@ app.listen(port, () => {
 
 
 app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 const { engine } = require("express-handlebars");
 app.engine('handlebars', engine());
@@ -19,3 +21,7 @@ app.use('/', artRouter);
 
 const detailRouter = require('./routes/artdetail');
 app.use('/artwork', detailRouter);
+
+
+const searchRouter = require('./routes/artsearch');
+app.use('/search', searchRouter);
