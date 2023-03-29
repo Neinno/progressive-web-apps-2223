@@ -6,11 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rijksmuseum app</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="manifest" href="./manifest.json">
 </head>
 <body>
 
     {{{body}}}
 
-    <script src="/js/script.js"></script>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/serviceworker.js')
+            .then(function(registration) {
+            return registration.update();
+            })
+        });
+  }
+  </script>
+
+  <script src="/js/script.js"></script>
 </body>
 </html>

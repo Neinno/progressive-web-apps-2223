@@ -1,0 +1,16 @@
+{
+	"name": "Rijksmuseum App",
+	"short_name": "Rijksmuseum App",
+	"theme_color": "#40474F",
+	"background_color": "#40474F",
+	"display": "standalone",
+	"Scope": "/",
+	"start_url": "/",
+	"icons": [
+        {   
+            "src": "assets/icons/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"	
+        }
+    ]
+}
