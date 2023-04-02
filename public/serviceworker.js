@@ -1,4 +1,4 @@
-const CORE_CACHE_NAME = 'cache-v1';
+const CORE_CACHE_NAME = 'cache-v2';
 const RUNTIME_CACHE_NAME = 'runtime-cache';
 const CORE_ASSETS = [
   '/offline',
