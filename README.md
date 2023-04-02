@@ -156,6 +156,33 @@ In de serverworker geef ik aan welke pagina's ik wil opslaan in mijn cache. Dit 
 
 ### Activity Diagram
 <img src="/readmeimgs/activityDiagram.png" height=400px>
+
+### Checklist <a name="checklist"></a>
+- [x] Applicatie overzetten naar NodeJS
+- [x] Express 
+- [x] Nodemon toevoegen
+- [x] Template Engine toevoegen
+- [x] Fetch werkend maken
+- [x] Data tonen in handlebars
+- [x] Clientside code toevoegen
+- [x] Routes toevoegen
+- [x] App installable maken
+- [x] Serviceworker toevoegen
+- [ ] Progressive enhancements
+- [ ] Design verbeteren
+- [ ] CSS aanpassen
+
+### Bronnen <a name="bronnen"></a>
+- [Main repository van dit vak](https://github.com/cmda-minor-web/progressive-web-apps-2223)
+- [RijksMuseum API](https://data.rijksmuseum.nl/object-metadata/api/)
+- [NodeJS](https://nodejs.org/en/docs/guides/getting-started-guide)
+- [Nodemon] (https://www.npmjs.com/package/nodemon)
+- [Express](https://expressjs.com/en/starter/installing.html)
+- [Handlebars](https://www.npmjs.com/package/express-handlebars)
+- [DotEnv] (https://www.npmjs.com/package/dotenv)
+- [NodeFetch] (https://www.npmjs.com/package/node-fetch)
+- [Manifest.json] (https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
+- [Serviceworker] (https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 <!-- Here are some hints for your project! -->
 
 <!-- Start out with a title and a description -->
