@@ -17,6 +17,7 @@ https://github.com/Neinno/rijksmuseum-app
 
 
 Dit project maakt gebruik van de rijksmuseum API om data op te halen.
+
 [Link met infomratie over de API](https://www.rijksmuseum.nl/nl/onderzoek/onderzoek-doen/data)
 
 [Object meta data](https://data.rijksmuseum.nl/object-metadata/)
