@@ -141,7 +141,21 @@ Een manifest.json word gebruikt om van je applicatie ook echt een Progressive We
 Hier geef ik de naam van de applicatie mee, en wat andere dingen zoals kleur, icon, en waar de app moet beginnen.
 
 ### Serviceworker
-Een Serviceworker word gebruik om je appli
+Een Serviceworker word gebruik om je applicatie in je cache van je browser op te slaan. Ook kan ik in de serviceworker een offline pagina meegeven. Een offline pagina word gebruikt om aan te tonen dat je op dit moment geen internet hebt.
+
+```js
+const CORE_CACHE_NAME = 'cache-v1';
+const RUNTIME_CACHE_NAME = 'runtime-cache';
+const CORE_ASSETS = [
+  '/offline',
+  'css/style.css'
+]
+```
+
+In de serverworker geef ik aan welke pagina's ik wil opslaan in mijn cache. Dit zijn nu mijn offline pagina en mijn style.css. Dit heb ik gedaan zodat ook zonder internet mijn pagina gestyles is. Dit werkt dan vervolgens ook voor de pagina's die zijn opgeslagen in je cache.
+
+### Activity Diagram
+<img src="/readmeimgs/activityDiagram.png" height=400px>
 <!-- Here are some hints for your project! -->
 
 <!-- Start out with a title and a description -->
