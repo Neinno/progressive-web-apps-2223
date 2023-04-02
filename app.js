@@ -25,6 +25,6 @@ app.use('/artwork', detailRouter);
 const searchRouter = require('./routes/artsearch');
 app.use('/search', searchRouter);
 
-app.get('/offline', (req, res) => {
-    res.render('offline')
-})
+
+const offlineRouter = require('./routes/offline');
+app.use('/offline', offlineRouter);

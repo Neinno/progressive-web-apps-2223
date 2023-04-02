@@ -2,8 +2,48 @@
 
 Minor web development 2023 | CMD Jaar 3 | Nigel Fijnheer
 
-## Intoduction
+# Table of contents
+1. [Introductie](#introductie)
+2. [How to Install](#HowToInstall)
+3. [Proces](#proces)
+3. [Checklist](#checklist)
+3. [Bronnen](#bronnen)
 
+## Intoduction <a name="introductie"></a>
+Voor het vak PWA maak ik een Progressive Web App. Voor deze PWA gebruik ik een applicatie die ik eerder heb gemaakt tijdens WAFS. 
+Die kan gevonden worden in de volgende repository:
+
+https://github.com/Neinno/rijksmuseum-app
+
+
+Dit project maakt gebruik van de rijksmuseum API om data op te halen.
+[Link met infomratie over de API](https://www.rijksmuseum.nl/nl/onderzoek/onderzoek-doen/data)
+
+[Object meta data](https://data.rijksmuseum.nl/object-metadata/)
+
+### How to install: <a name="HowToInstall"></a>
+Om dit project op je eigen computer te krijgen kan je het volgende doen:
+
+```
+git clone https://github.com/Neinno/progressive-web-apps-2223.git
+```
+
+
+Install de npm packages met:
+
+```
+npm install
+```
+
+
+Start het project met:
+
+```
+node app.js
+```
+
+
+## Proces <a name="proces"></a>
 
 <!-- Here are some hints for your project! -->
 
