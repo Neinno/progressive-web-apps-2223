@@ -157,6 +157,71 @@ In de serverworker geef ik aan welke pagina's ik wil opslaan in mijn cache. Dit 
 ### Activity Diagram
 <img src="/readmeimgs/activityDiagram.png" height=400px>
 
+### Critical Render Path
+
+Om de snelheid van de PWA te verbeteren ga ik kijken naar critical render path. Om te beginnen heb ik gekeken naar het grootste probleem van mijn pagina. Dat is dat de plaatjes die uit de Rijksmuseum API worden gehaald erg groot zijn en traag inladen. Om dit te verbeteren heb ik lazyload toegevoegd:
+```html
+<img src="{{this.webImage.url}}" loading="lazy">
+```
+
+#### Fonts
+Daarna heb ik een custom font toegevoegd aan de pagina. Ik heb hiervoor open-sans gebruikt uit google fonts:
+- [OpenSans](https://fonts.google.com/specimen/Open+Sans)
+
+Deze heb ik gedownload en in mijn assets map gezet. Deze heb ik aangeroepen met @fontface. Om ervoor te zorgen dat er nog steeds content geladen word als het font niet aanwezig is heb ik font-display: swap; gebruikt. Dit zorgt ervoor dat je een "Flash of unstyled text" ziet. Dit is beter dan niets:
+```css
+@font-face {
+    font-family: "opensans";
+    src: url("../assets/fonts/OpenSans-Regular.woff");
+    font-display: swap;
+}
+```
+
+#### Gzip
+Als volgende stap heb ik Gzip toegevoegd aan mijn app.js. Dit heb ik gedaan door de volgende regels toe te voegen aan mijn app.js:
+```js
+const app = express();
+app.use(compression());
+```
+
+Dit compressed de resonpse body, en versnelt daarmee de webapp.
+
+
+#### Gulp
+Gulp is een tool die ik heb gebruik om mijn public CSS en JS kleiner te maken. Dit versnelt ook de applicatie. Gulp is een aparte dependency die ik heb geïnstalleerd op mijn NodeJS applicatie. Eerst heb ik al mijn Clientside code naar een andere map gezet, zodat gulp daar makkelek bij kan, en dan vervolgens de compressed versie in de public map kan zetten. Voor CSS gebruik ik Gulp-clean-css en voor JS gebruik ik gulp-uglify.
+
+```js
+gulp.task('compressCSS', function() {
+  return gulp.src('src/publicCSS/*.css')
+    .pipe(minify())
+    .pipe(gulp.dest('./public/css/'))
+});
+
+gulp.task('uglify', function() {
+    return gulp.src('src/publicJS/*.js')
+      .pipe(uglify())
+      .pipe(gulp.dest('./public/js/'))
+});
+
+
+gulp.task('serviceworker', function() {
+    return gulp.src('src/publicSW/serviceworker.js')
+      .pipe(uglify())
+      .pipe(gulp.dest('./public/'))
+  });
+  
+gulp.task('default', gulp.series(['compressCSS', 'uglify', 'serviceworker']))
+```
+
+Met deze code haal ik mijn zelf geschreven bestand op, en gulp zet ze vervolgens in mijn public map. Dit helpt de grootte van de bestand te verkleinen en daarmee de applicatie sneller te maken.
+
+#### Conclusie
+
+Door al deze dingen uit te voeren bij critical render path is mijn applicatie sneller geworden. Ik heb een lighthouse report uitgevoerd om te kijken wat mijn performance op de site is.
+
+<img src="/readmeimgs/lighthousereport.png" height=400px>
+
+
 ### Checklist <a name="checklist"></a>
 - [x] Applicatie overzetten naar NodeJS
 - [x] Express 
@@ -168,6 +233,8 @@ In de serverworker geef ik aan welke pagina's ik wil opslaan in mijn cache. Dit 
 - [x] Routes toevoegen
 - [x] App installable maken
 - [x] Serviceworker toevoegen
+- [x] Critical render path
+- [x] Gulp to minify CSS & JS
 - [ ] Progressive enhancements
 - [ ] Design verbeteren
 - [ ] CSS aanpassen
@@ -183,32 +250,8 @@ In de serverworker geef ik aan welke pagina's ik wil opslaan in mijn cache. Dit 
 - [NodeFetch](https://www.npmjs.com/package/node-fetch)
 - [Manifest.json](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
 - [Serviceworker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-<!-- Here are some hints for your project! -->
+- [Font Display Swap](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+- [Gulp](https://gulpjs.com/)
+- [CSSMinify](https://www.npmjs.com/package/gulp-css-minify)
+- [Uglify](https://www.npmjs.com/package/gulp-uglify)
 
-<!-- Start out with a title and a description -->
-
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
-
-<!-- Add a link to your live demo in Github Pages 🌐-->
-
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
-
-<!-- Maybe a table of contents here? 📚 -->
-
-<!-- ☝️ replace this description with a description of your own work -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- ...you should implement an explanation of client- server rendering choices 🍽 -->
-
-<!-- ...and an activity diagram including the Service Worker 📈 -->
-
-<!-- This would be a good place for a list of enhancements to optimize the critical render path implemented your app  -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- We all stand on the shoulders of giants, please link all the sources you used in to create this project. -->
-
-<!-- How about a license here? When in doubt use GNU GPL v3. 📜  -->

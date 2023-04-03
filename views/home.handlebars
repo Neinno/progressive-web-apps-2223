@@ -3,7 +3,7 @@
 <main>
     <form action="/search" method="POST">
         <input type="text" name="searchInput" placeholder="Search...">
-        <button type="submit">Search</button>
+        <button class="submitbutton" type="submit">Search</button>
     </form>
 
     
@@ -15,7 +15,7 @@
                 <a href="artwork/{{this.objectNumber}}">
                     <figure>
                         <figcaption>{{this.title}}</figcaption>
-                        <img src="{{this.webImage.url}}">
+                        <img src="{{this.webImage.url}}" loading="lazy">
                     </figure>
                 </a>
              {{/each}}

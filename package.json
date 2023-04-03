@@ -22,12 +22,16 @@
   },
   "homepage": "https://github.com/Neinno/progressive-web-apps-2223#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.2",
     "node-fetch": "^2.6.9"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-uglify": "^3.0.2",
     "nodemon": "^2.0.21"
   }
 }

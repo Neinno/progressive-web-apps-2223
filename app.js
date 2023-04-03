@@ -1,5 +1,7 @@
 const express = require('express');
+const compression = require('compression');
 const app = express();
+app.use(compression());
 const port = 3000;
 
 app.listen(port, () => {
@@ -25,6 +27,9 @@ app.use('/artwork', detailRouter);
 const searchRouter = require('./routes/artsearch');
 app.use('/search', searchRouter);
 
+app.get('/offline', (req, res) => {
+    res.render('offline', {
+        title: 'Offline'
+    });
+})
 
-const offlineRouter = require('./routes/offline');
-app.use('/offline', offlineRouter);
