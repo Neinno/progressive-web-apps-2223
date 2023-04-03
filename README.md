@@ -221,6 +221,11 @@ Door al deze dingen uit te voeren bij critical render path is mijn applicatie sn
 
 <img src="/readmeimgs/lighthousereport.png" height=400px>
 
+### Deployment
+Voor Deployment heb ik gebruik gemaakt van render.com. Dit laat mij mijn app makkelek online zetten.
+
+https://cmdminorwebpwa.onrender.com/
+
 
 ### Checklist <a name="checklist"></a>
 - [x] Applicatie overzetten naar NodeJS
