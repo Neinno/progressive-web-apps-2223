@@ -8,6 +8,9 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">=14 <15"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Neinno/progressive-web-apps-2223.git"
