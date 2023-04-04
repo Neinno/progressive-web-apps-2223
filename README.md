@@ -188,7 +188,7 @@ Dit compressed de resonpse body, en versnelt daarmee de webapp.
 
 
 #### Gulp
-Gulp is een tool die ik heb gebruik om mijn public CSS en JS kleiner te maken. Dit versnelt ook de applicatie. Gulp is een aparte dependency die ik heb geïnstalleerd op mijn NodeJS applicatie. Eerst heb ik al mijn Clientside code naar een andere map gezet, zodat gulp daar makkelek bij kan, en dan vervolgens de compressed versie in de public map kan zetten. Voor CSS gebruik ik Gulp-clean-css en voor JS gebruik ik gulp-uglify.
+Gulp is een tool die ik heb gebruik om mijn public CSS en JS kleiner te maken. Dit versnelt ook de applicatie. Gulp is een aparte dependency die ik heb geïnstalleerd op mijn NodeJS applicatie. Eerst heb ik al mijn Clientside code naar een andere map gezet, zodat gulp daar makkelijk bij kan, en dan vervolgens de compressed versie in de public map kan zetten. Voor CSS gebruik ik Gulp-clean-css en voor JS gebruik ik gulp-uglify.
 
 ```js
 gulp.task('compressCSS', function() {
@@ -249,7 +249,7 @@ Het laden van de pagina is nu een stuk sneller dan eerst. Het is zeker heel erg 
 
 
 ### Deployment
-Voor Deployment heb ik gebruik gemaakt van render.com. Dit laat mij mijn app makkelek online zetten.
+Voor Deployment heb ik gebruik gemaakt van render.com. Dit laat mij mijn app makkelijk online zetten.
 
 https://cmdminorwebpwa.onrender.com/
 
