@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
     fetch(`${process.env.API_URL}?key=${process.env.API_TOKEN}&imgonly=true`)
         .then(async response => {
             const data = await response.json()
-        
             res.render('home', {
                 data: data.artObjects
             });

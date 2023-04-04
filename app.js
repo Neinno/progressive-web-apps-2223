@@ -18,6 +18,13 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
+app.use((req, res, next) => {
+    // todo: set cache header to 1 year
+    res.setHeader('Cache-Control', 'max-age=' + 365 *
+    24 * 60 * 60);
+    next();
+});
+
 const artRouter = require('./routes/art');
 app.use('/', artRouter);
 

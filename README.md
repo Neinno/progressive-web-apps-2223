@@ -215,11 +215,38 @@ gulp.task('default', gulp.series(['compressCSS', 'uglify', 'serviceworker']))
 
 Met deze code haal ik mijn zelf geschreven bestand op, en gulp zet ze vervolgens in mijn public map. Dit helpt de grootte van de bestand te verkleinen en daarmee de applicatie sneller te maken.
 
-#### Conclusie
-
 Door al deze dingen uit te voeren bij critical render path is mijn applicatie sneller geworden. Ik heb een lighthouse report uitgevoerd om te kijken wat mijn performance op de site is.
 
 <img src="/readmeimgs/lighthousereport.png" height=400px>
+
+#### Images
+
+Mijn grootste probleem met mijn PWA op dit moment is de performance. Het langste is nu het laden van de images. Ik heb de link aangepast van de images die gefetched worden, dit help heel erg met de performance.
+
+```handlebars
+<img src="{{this.webImage.url}}400" loading="lazy">
+```
+
+Ook heb ik dit toegevoegd aan mijn code:
+```js
+app.use((req, res, next) => {
+    // todo: set cache header to 1 year
+    res.setHeader('Cache-Control', 'max-age=' + 365 *
+    24 * 60 * 60);
+    next();
+});
+```
+
+Dit stopt mijn bestanden in mijn cache, en zorgt ervoor dat de pagina een stuk sneller laad bij de 2e keer.
+
+<img src="/readmeimgs/cache.png" height=400px>
+
+#### Conclusie
+
+Het laden van de pagina is nu een stuk sneller dan eerst. Het is zeker heel erg snel als het voor de 2e keer laad. Mijn lighthouse report is nu nog beter dan eerst:
+
+<img src="/readmeimgs/report2.png" height=400px>
+
 
 ### Deployment
 Voor Deployment heb ik gebruik gemaakt van render.com. Dit laat mij mijn app makkelek online zetten.
